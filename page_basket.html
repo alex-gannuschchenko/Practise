@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Корзина</title>
+   <link rel="stylesheet" href="/css/style.css">
+   <link rel="stylesheet" href="css/icons.css">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+   <div class="wrapper basket-wrapper">
+      <header class="header page__header">
+         <div class="header__body">
+            <div class="header__content content">
+               <div class="header__container ">
+                  <button type="button" class="header__button icon-menu-colored"><span></span></button>
+                  <div class="header__menu menu">
+                     <nav class="menu__body">
+                        <ul class="menu__list">
+                           <li class="menu__item"><a href="" class="menu__link">NEW</a></li>
+                           <li class="menu__item"><a href="page_category.html" class="menu__link ">КАТАЛОГ</a></li>
+                           <li class="menu__item"><a href="" class="menu__link">О НАС</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <a href="main.html" class="header__logo">YANKI</a>
+                  <div class="header__select select">
+                     <select class="select__list ">
+                        <option value="" class="select__item">RU</option>
+                        <option value="" class="select__item">UA</option>
+                        <option value="" class="select__item">EN</option>
+                     </select>
+                     <select class="select__list select__list_2">
+                        <option value="" class="select__item">UAH</option>
+                        <option value="" class="select__item">USD</option>
+                        <option value="" class="select__item">EUR</option>
+                     </select>
+                  </div>
+                  <div class="header__icons icons">
+                     <ul class="icons__list">
+                        <li class="icons__item"><a href="" class="icons__link icon-search"></a></li>
+                        <li class="icons__item"><a href="" class="icons__link icon-user"></a></li>
+                        <li class="icons__item"><a href="" class="icons__link icon-favorite"></a></li>
+                        <li class="icons__item"><a href="" class="icons__link icon-basket"></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <nav class="card__nav nav">
+         <div class="nav__list">
+            <div class="nav__item">
+               <a href="" class="nav__link">Главная</a>
+            </div>
+            <div class="nav__item ">
+               <div class="nav__link-arrow icon-arrowRight"></div>
+            </div>
+            <div class="nav__item">
+               <a href="page_category.html" class="nav__link">Корзина</a>
+            </div>
+         </div>
+      </nav>
+      <main class="basket-grid grid-card">
+         <section class="basket-grid__case basket">
+            <!--SECTION ORDER-->
+            <!--Order container-->
+            <section class="basket__content order">
+               <!--Orders-->
+               <section class="order__order">
+                  <div class="order__title">Ваш заказ</div>
+                  <div class="order__coat">
+                     <img src="images/basket/creamCoat.png" alt="">
+                     <div class="order__body">
+                        <div class="order__desc">
+                           <div class="order__prod_img">арт. 1588262</div>
+                           <div class="order__name">Кремовое пальто</div>
+                        </div>
+                        <div class="order__color">
+                           <a href="#" class="order__color_1"></a>
+                        </div>
+                        <a class="order__size dropdown">
+                           <div class="order__item">L</div>
+                           <div class="order__item"><img src="icons/arrowDown.svg" alt=""></div>
+                        </a>
+                        <div class="order__count count">
+                           <a class="count__item"><img src="icons/minus.svg" alt=""></a>
+                           <span>3</span>
+                           <a class="count__item"><img src="icons/plus.svg" alt=""></a>
+                        </div>
+                        <div class="order__price">
+                           9450 грн
+                        </div>
+                        <div class="order__trash">
+                           <div class="order__price_hiden">9450 грн</div>
+                           <a href="" class="icon-trashcan"></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="order__coat">
+                     <img src="images/basket/blueParka.png" alt="">
+                     <div class="order__body">
+                        <div class="order__desc">
+                           <div class="order__prod_img">арт. 1588262</div>
+                           <div class="order__name coat_name">Синяя парка</div>
+                        </div>
+                        <div class="order__color">
+                           <a href="#" class="order__color_2"></a>
+                        </div>
+                        <a class="order__size dropdown">
+                           <div class="order__item">M</div>
+                           <div class="order__item"><img src="icons/arrowDown.svg" alt=""></div>
+                        </a>
+                        <div class="order__count count">
+                           <a class="count__item"><img src="icons/minus.svg" alt=""></a>
+                           <span>2</span>
+                           <a class="count__item"><img src="icons/plus.svg" alt=""></a>
+                        </div>
+                        <div class="order__price">
+                           5800 грн
+                        </div>
+                        <div class="order__trash">
+                           <div class="order__price_hiden">5800 грн</div>
+                           <a href="" class="icon-trashcan"></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="order__sum">К оплате:
+                     <div class="order__total">15250 грн</div>
+                  </div>
+               </section>
+            </section>
+            <!--SECTION ORDERING-->
+            <section class="basket__content ordering">
+               <div class="ordering__form form">
+                  <div class="form__personal">
+                     <div class="form-title">Оформление заказа</div>
+                     <div class="form__title form-title">Персональные данные</div>
+                     <div class="form__body">
+                        <input type="text" placeholder="Ваше имя&#8432;" class="form__input">
+                        <input type="text" placeholder="Ваша фамилия&#8432;" class="form__input">
+                        <input type="text" placeholder="Ваше  e-mail&#8432;" class="form__input">
+                        <input type="text" placeholder="Ваше имя&#8432;" class="form__input">
+                     </div>
+                  </div>
+                  <div class="form__delivery">
+                     <div class="form-title">Способ доставки:</div>
+                     <div class="form__body">
+                        <div class="form__country">
+                           <div class="form-title">По Украине:</div>
+                           <label for="place" class="form__radio">
+                              <input id="place" type="radio" name="radio-1" checked>
+                              Самовывоз - вул. Большая Васильковская 14(м. Льва Толстого)
+                           </label>
+                           <label for="mail" class="form__radio">
+                              <input id="mail" type="radio" name="radio-1">
+                              Новая Почта
+                           </label>
+                        </div>
+                        <div class="form__country">
+                           <div class="form-title">Международная доставка:</div>
+                           <label for="ukr" class="form__radio">
+                              <input id="ukr" type="radio" name="radio-2">
+                              Украпочта / 1-3 недели / 30$
+                           </label>
+                           <label for="dhl" class="form__radio">
+                              <input id="dhl" type="radio" name="radio-2">
+                              DHL / 3-7 дней / 60$
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form__address">
+                     <div class="form-title">Адрес доставки:</div>
+                     <div class="form__body">
+                        <input type="text" placeholder="Город&#8432;" class="form__input">
+                        <input type="text" placeholder="Отделение почты&#8432;" class="form__input">
+                     </div>
+                  </div>
+                  <div class="form__pay">
+                     <div class="form-title">Вы можете оплатить покупку одним из ниже перечисленных способов:</div>
+                     <div class="form__body">
+                        <div class="form__country">
+                           <label for="privat" class="form__radio form__radio_1">
+                              <input id="privat" type="radio" name="radio-3" checked>
+                              Полная предоплата через Приват 24
+                              <img src="icons/Privat24.svg" alt="Privat24">
+                           </label>
+                           <label for="nova" class="form__radio">
+                              <input id="nova" type="radio" name="radio-3">
+                              Наложенным платежом в отделении Новой Почты </label>
+                        </div>
+                        <div class="form__county ">
+                           <label for="visa" class="form__radio form__radio_1">
+                              <input id="visa" type="radio" name="radio-3">
+                              Денежным переводом Visa/MasterCard
+                              <div class="radio-img">
+                                 <img src="icons/Visa.svg" alt="Visa">
+                                 <img src="icons/Mastercard.svg" alt="MasterCard">
+                              </div>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form__bonus">
+                     <div class="form-title">Использование бонусного счёта:</div>
+                     <input type="text" placeholder="Сумма списания бонусов*" class="form__input">
+                  </div>
+               </div>
+               <div class="ordering__result result">
+                  <div class="result__body">
+                     <a href="" class="result__cabinet">Войти в личный кабинет</a>
+                     <div class="result__info"><a href="#">УСЛОВИЯ ДОСТАВКИ</a>
+                        <a href="#">УСЛОВИЯ ОБМЕНА И ВОЗВРАТА</a>
+                        <a href="#">ИНФОРМАЦИЯ ОБ ОПЛАТЕ</a>
+                     </div>
+                     <div class="result__order">
+                        <div class="result__item">
+                           <div>ДОСТАВКА:</div>
+                           <span>По тарифам перевозчика</span>
+                        </div>
+                        <div class="result__item">
+                           <div>БОНУСЫ:</div>
+                           <span>-69 грн</span>
+                        </div>
+                        <div class="result__item">
+                           <div>ИТОГО:</div>
+                           <span>15250 грн</span>
+                        </div>
+                     </div>
+                     <div class="info__button button">
+                        <a href="page_basket.html" class="button__link">Оформить заказ</a>
+                     </div>
+                     <div class="result__conf">
+                        Нажимая на кнопку «оплатить заказ»,
+                        я принимаю условия
+                        <ins>публичной оферты</ins> и
+                        <ins>политики конфиденциальности</ins>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </section>
+      </main>
+      <footer class="footer page__footer">
+         <div class="footer__container __container">
+            <div class="footer__content content">
+               <div class="content__row">
+                  <div class="content__column">
+                     <div class="content__title">КОМПАНИЯ</div>
+                     <div class="content__image">
+                        <img src="icons/arrowDown.svg" alt="">
+                     </div>
+                     <ul class="content__list content__list_1">
+                        <li class="content__item"><a href="" class="content__link">О нас</a></li>
+                        <li class="content__item"><a href="" class="content__link">Контакты</a></li>
+
+                     </ul>
+                  </div>
+                  <div class="content__column">
+                     <div class="content__title">ПОЛЕЗНОЕ</div>
+                     <div class="content__image">
+                        <img src="icons/arrowDown.svg" alt="">
+                     </div>
+                     <ul class="content__list content__list_2">
+                        <li class="content__item"><a href="" class="content__link">Оплата и доставка</a></li>
+                        <li class="content__item"><a href="" class="content__link">Условия возврата</a></li>
+                        <li class="content__item"><a href="" class="content__link">Бонусная система</a></li>
+                     </ul>
+                  </div>
+                  <div class="content__column ">
+                     <div class="content__title">ПОКУПАТЕЛЮ</div>
+                     <div class="content__image">
+                        <img src="icons/arrowDown.svg" alt="">
+                     </div>
+                     <ul class="content__list content__list_3">
+                        <li class="content__item"><a href="" class="content__link">Избранное</a></li>
+                        <li class="content__item"><a href="" class="content__link">Публичная оферта</a></li>
+                        <li class="content__item"><a href="" class="content__link">Политика конфиденциальности</a></li>
+                     </ul>
+                  </div>
+                  <div class="content__column content__column_4">
+                     <div class="content__title">КОНТАКТЫ</div>
+                     <ul class="content__list content__list_4">
+                        <li class="content__item">
+                           <a href="" class="content__link icon-instagram"></a>
+                           <a href="" class="content__link icon-telegram"></a>
+                        </li>
+                        </li>
+                        <li class="content__item"><a href="" class="content__link">+38(073) 096 36 44</a></li>
+                        <li class="content__item"><a href="" class="content__link">info@yanki.com</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="content__info">©️ 2021 Yanki. All rights reserved</div>
+            </div>
+         </div>
+      </footer>
+   </div>
+</body>
+
+</html>

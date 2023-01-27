@@ -1,0 +1,540 @@
+*{box-sizing: border-box}
+.wrapper{
+  min-height: 100vh;
+  display: grid;
+  gap: 30px;
+  grid-template:minmax(40px,auto) 1fr minmax(120px,auto) / 1fr;
+  grid-template-areas:
+    "header "
+    "nav"
+    "main"
+    "footer";
+}
+.card{
+  padding: 0 20px;
+}
+.page__header{
+  grid-area: header;
+  .header__container{
+    padding: 24px 0 0 0;
+  }
+}
+.nav{
+  grid-area: nav;
+  grid-template: 1fr / 1fr minmax(auto, 1140px)1fr;
+}
+.grid-card{
+}
+
+.main{
+  &__content{
+    padding: 0 0;
+  }
+}
+//Section container
+.section{
+  display:grid ;
+  grid-template:5fr / 1fr;
+  &__item{
+    &_title{
+      @include adaptiv-font(20,18);
+      color: #252525;
+      margin-bottom:30px;
+    }
+  }
+}
+//Section Items-------------------------------------------------------------------------------
+//Section products----------------------------
+.product {
+  display: grid;
+  grid-template: 2fr/ 1fr;
+}
+.product-slider{
+  display:grid ;
+
+}
+.slider-nav {
+  display: flex;
+  gap: 10px;
+  padding:0 0 30px 0;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__name {
+    @include adaptiv-font(20,18);
+    line-height: 21.13px;
+    color: #252525;
+  }
+
+  &__price {
+    @include adaptiv-font(16,14);
+    font-weight: 700;
+  }
+
+  &__color {
+    color:#E0BEA2;
+
+  }
+
+  &__size {
+  }
+
+  &__buttons {
+
+  }
+
+  &__button {
+  }
+
+  &__description {
+    &_title {
+      @include adaptiv-font(16,14);
+      color: #252525;
+    }
+  }
+  &__block {
+    display: flex;
+    margin-right: auto;
+    position: relative;
+    padding-bottom: 15px;
+    &:after{
+      width:100%;
+      height: 0.3px;
+      content: '';
+      background-color: #252525;
+      position: absolute;
+      left: 0;
+      top:20px;
+      margin: 0 0 0 0 ;
+    }
+  }
+  &__description {
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    a{
+      color: #252525;
+    }
+  }
+  &__buttons {
+    display: grid;
+    column-gap: 20px;
+    grid-template: 1fr/ 1fr 1fr;
+    img{
+      padding: 0 5px;
+    }
+  }
+  &__info{
+    display: grid;
+
+  }
+}
+.info-color{
+  display: flex;
+  justify-content:start;
+  align-items: center;
+
+  &__link {
+    margin-right: 5px;
+  }
+  &__circle {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    &__link {
+
+    }
+    &_white {
+    }
+
+    &_blue {
+    }
+
+    &_gold {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #F1DDAA;
+    }
+  }
+}
+.info-color_gold{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 0.1px solid #252525;
+}
+.size {
+
+  &__list {
+    display: none;
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px 15px 19px;
+    a{display: flex;}
+  }
+  &__info{
+  }
+
+}
+//-------------------------------------------------------------------
+//Section fashion------------------------------
+.fashion{
+  .fashion_coat{
+    display: none;
+  }
+  .fashion_parka{
+    display: none;
+  }
+}
+.fashion-more{}
+//Section like--------------------------------
+.like{
+  .like-fur-coat{order: 3}
+  .like-parka{order: 1}
+  .like-jacket{order:4}
+  .like-coat{order: 2}
+}
+//Section wathced
+.watched{}
+//ALL Section items settings------------------------------------------
+.blocks{
+  grid-auto-flow: column;
+  &__favorite {
+    display: grid;
+    justify-items: end;
+    height: 100%;
+
+  }
+  &__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #E0BEA2;
+    border-radius: 0 0 0 15px;
+    a{
+      color: #FFFFFF;
+      z-index: 1;
+    }
+  }
+
+    &__info{
+      position: relative;
+      display: flex;
+    }
+    &__name {
+      padding: 5px;
+      display:grid;
+    }
+    &__new{
+    }
+    &__price {
+      padding:5px;
+    }
+    &__sizes {
+      display: flex;
+      text-align: center;
+      padding-bottom: 5px;
+    }
+
+    &__color {
+    }
+
+
+  .icon-favorite {
+  }
+  .info {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    &__name {
+      @include adaptiv-font(16,14);
+      display: flex;
+      padding:15px 0 5px 0;
+      justify-content: center;
+    }
+
+    &__price {
+      @include adaptiv-font(16,14);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    &__sizes {
+      margin: 5px;
+    }
+  }
+  .new{
+    padding:0 5px;
+    color: #E0BEA2;}
+  .size {
+    &__link {
+      @include adaptiv-font(16,14);
+      color: rgba(37, 37, 37, 0.5);
+    }
+  }
+
+}
+//-------------------------------------------------------------------
+//Settings for nets-----------------------
+@media (min-width: 1025px){
+  .product-slider{
+    display: grid;
+    justify-content:end;
+    grid-template-columns:minmax(72.5px,100px) minmax(335px,450px);
+    column-gap: 10px;
+    &__image {
+      padding: 0 0 100% 0;
+      position: relative;
+      img{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+  .slider-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__item{
+      padding: 0 0 100% 0;
+      position: relative;
+      img{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+  .info{
+    &__buttons {
+      display: grid;
+      column-gap: 20px;
+      grid-template: 1fr/ 1fr 1fr;
+      img{
+        padding: 0 5px;
+      }
+    }
+
+  }
+}
+@media (max-width: 1024px) {
+  .product-slider{
+    display:grid ;
+    align-content: center;
+    grid-template: 2fr/ 1fr;
+    row-gap: 10px;
+    &__image {
+      padding: 0 0 100% 0;
+      position: relative;
+      display: block;
+      img{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+  .slider-nav{
+    display: flex;
+    grid-row: 2/3;
+    &__item{
+      width: 100%;
+      padding: 0 0 18.80% 0;
+      position: relative;
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+}
+//Grid for screens > 768px----------------------------------------------------
+@media (min-width: 768px) {
+  .section{
+    row-gap: 70px;
+  }
+  .grid-card{
+    grid-area: main;
+    display: grid;
+    grid-template: 1fr / 1fr minmax(auto, 1140px)1fr;
+  }
+  .main{
+    grid-column: 2/3;
+    display: grid;
+  }
+  .product{
+    display: grid;
+    grid-template:minmax(auto,570px)/ minmax(auto,560px) minmax(auto,530px);
+    column-gap: 50px;
+    justify-content: end;
+  }
+  .fashion{
+    width: 64.9%;
+  }
+  .watched{
+    width: 50%;
+  }
+  .blocks{
+    &__items {
+      display: grid;
+      column-gap:15px;
+      row-gap: 5px;
+
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    }
+
+    &__item {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template: auto 1fr minmax(40px, auto) / 1fr;
+    }
+    &__image {
+      position: relative;
+      padding: 0 0 109.59% 0;
+      overflow: hidden;
+
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+    &__info{
+      row-gap: 20px;
+    }
+  }
+}
+.card__footer{
+  grid-area: footer;
+}
+//Grid for screens <768px---------------------------------------------------------
+@media (max-width: 768px) {
+  .section{
+    row-gap: 40px;
+    &__item{
+      &_title{
+        margin-bottom:20px
+      }
+    }
+  }
+  .nav{
+    grid-area: nav;
+    grid-template: 1fr / 1fr minmax(auto, 1140px)1fr;
+  }
+  .product-slider{
+    display:grid ;
+    align-content: center;
+    grid-template: 2fr/ 1fr;
+    row-gap: 10px;
+    &__image {
+      padding: 0 0 100% 0;
+      position: relative;
+      display: block;
+      img{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+  .slider-nav{
+    display: flex;
+    grid-row: 2/3;
+    &__item{
+      width: 100%;
+      padding: 0 0 18.80% 0;
+      position: relative;
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+  .blocks{
+    &__items {
+      display: grid;
+      column-gap:5px;
+      row-gap: 5px;
+      grid-template-columns: repeat(auto-fit, minmax(165px,1fr));
+    }
+
+    &__item {
+      display: grid;
+      grid-template: auto minmax(165px,230px) minmax(40px, 96px) / 1fr;
+    }
+    &__image {
+      position: relative;
+      padding: 0 0 71.73% 0;
+      overflow: hidden;
+      .info{
+        row-gap: 0;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .fashion-more{
+    .fashion-m-jacket{order: 1}
+    .fashion-m-coat{order: 2}
+    .fashion-m-fur{order: 3}
+    .fashion-m-parka{order: 4}
+  }
+  .like{
+    .like-jacket{order: 1}
+    .like-coat{order: 2}
+    .like-fur-coat{order: 3}
+    .like-parka{order: 4}
+  }
+}

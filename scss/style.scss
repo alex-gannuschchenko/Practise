@@ -1,0 +1,172 @@
+//Підключення шрифту
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;700&display=swap');
+
+//----------------------------------------------------------------------------------------------------------------------
+//Шрифт по замовчуванню
+$fontFamily:"Raleway Light";
+$fontSize:rem(18);
+//Основний колір
+$mainColor: #000;
+
+//Налаштування ---------------------------------------------------------------------------------------------------------
+//Мінімальна ширина сторінки
+$minWidth:375;
+//Максимальна ши рина сторінки
+$maxWidth:1440;
+//Ширина обмежуючого контейнера
+$maxWidthContainer:1140;
+//Загальний відступ у контейнера
+$containerPadding:30;
+//Тип адаптиву
+//1 = відзивчивий (у контейнера нема брейк-поінтів)
+//2 = по брейк-поінтам()
+$responsiveType:1;
+
+//Ширина першого брейк-поінту
+$containerWidth : $maxWidthContainer + $containerPadding;
+
+//Брейк-поінти
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 375;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
+}
+//ADaptive padding like padding: vertical,horizontal;
+@mixin adaptive-padding-vh($pcSize-v, $mobSize-v,$pcSize, $mobSize){
+  $addSize: $pcSize - $mobSize;
+  $addSize-v: $pcSize-v - $mobSize-v;
+  $maxWidth: $maxWidth - 375;
+  padding:calc(#{$mobSize-v + px} + #{$addSize-v} * ((100vw - 375px) / #{$maxWidth})) calc(#{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
+}
+//Обнулення та загальні параметри---------------------------------------------------------------------------------------
+@import "base/null";
+@import "base/mixin";
+@import "header";
+@import "main";
+@import "footer";
+@import "pageCategory";
+@import "productCard";
+@import "productBasket";
+
+body{
+  height: 100%;
+  font-weight: 300;
+  background-color: white;
+}
+//Оболочка
+.wrapper{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  //Прижимання футера
+  > main {
+    flex: 1 1 auto;
+  }
+  //для слайдерів
+  > * {
+    min-width: 0;
+  }
+}
+._ibg{
+  position: relative;
+  &img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    object-fit: cover;
+  }
+}
+//Обмежуючий контейнер--------------------------------------------------------------------------------------------------
+/*Стилі застосовуються до всіх класів __container*/
+@if ($responsiveType==2){
+  [class*="__container"]{
+    @if($maxWidthContainer>0){
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin:0 auto;
+    }
+    @if($containerPadding>0){
+    }
+  }
+}
+@else {
+  [class*="__container"]{
+    margin: 0 auto;
+    @if($maxWidthContainer>0){
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;}
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      overflow: hidden;
+      @if($containerPadding>0 and $maxWidthContainer>0){
+      }
+    }
+  }
+}
+.button {
+  gap: 10px;
+  height: 50px;
+  max-width: 100%;
+  background-color: #E0BEA2;
+  &__link {
+    text-align: center;
+    @include adaptiv-font(16,14);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 16.5px 0;
+    color: #FFFFFF;
+    line-height: 16.44px;
+    text-transform:uppercase;
+    &:hover{
+      box-shadow:0px 5px 7px rgba(37, 37, 37, 0.15);
+      transition: 0.3s ease-in-out;
+    }
+    &:active{
+      box-shadow: inset 0px 3px 7px rgba(37, 37, 37, 0.15);
+    }
+  }
+}
+.button-outline{
+  gap: 10px;
+  height: 50px;
+  max-width: 100%;
+  border: 0.5px solid #252525;
+  &__link {
+    @include adaptiv-font(16,14);
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 16.5px 0;
+    color: #252525;
+    line-height: 16.44px;
+    text-transform:uppercase;
+    &:hover{
+      box-shadow:0px 5px 7px rgba(37, 37, 37, 0.15);
+      transition: 0.3s ease-in-out;
+    }
+    &:active{
+      box-shadow: inset 0px 3px 7px rgba(37, 37, 37, 0.15);
+    }
+    .icon-favorite{
+      font-size: 1px;
+      color: #E0BEA2}
+  }
+}
