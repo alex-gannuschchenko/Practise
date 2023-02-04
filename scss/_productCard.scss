@@ -15,7 +15,7 @@
 }
 .page__header{
   grid-area: header;
-  .header__container{
+  &.header__container{
     padding: 24px 0 0 0;
   }
 }
@@ -137,13 +137,14 @@
   display: flex;
   justify-content:start;
   align-items: center;
+  gap: 0.5rem;
 
   &__link {
     margin-right: 5px;
   }
   &__circle {
-    width: 21px;
-    height: 21px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     &__link {
 
